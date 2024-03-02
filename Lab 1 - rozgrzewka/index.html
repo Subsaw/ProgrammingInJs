@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Przelicz</title>
 </head>
-<body>
-    <input type="text" name="text1" id="text1" onkeyup="Przelicz()">
-    <input type="text" name="text2" id="text2" onkeyup="Przelicz()">
-    <input type="text" name="text3" id="text3" onkeyup="Przelicz()">
-    <input type="text" name="text4" id="text4" onkeyup="Przelicz()">
 
-    <button type="button" id="przelicz" onclick="Przelicz()">Przelicz</button>
+<body>
+    <div id="inputs-container">
+        <div class="count-row">
+            <input type="text" class="input-number" onkeyup="countInputs()">
+            <button onclick="removeInput(this)">Delete</button>
+        </div>
+        <div class="count-row">
+            <input type="text" class="input-number" onkeyup="countInputs()">
+            <button onclick="removeInput(this)">Delete</button>
+        </div>
+        <div class="count-row">
+            <input type="text" class="input-number" onkeyup="countInputs()">
+            <button onclick="removeInput(this)">Delete</button>
+        </div>
+    </div>
+
+    <button type="button" id="add-input" onclick="addInput()">Add new Input</button>
 
     <p>Suma:<span id="suma"></span></p>
     <p>Średnia: <span id="srednia"></span></p>
@@ -20,4 +32,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

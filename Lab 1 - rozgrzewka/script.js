@@ -1,27 +1,39 @@
+const countInputs = () => {
+  const inputFields = document.getElementsByClassName("input-number");
+  let sum = 0;
+  let values = [];
 
+  for (var i = 0; i < inputFields.length; i++) {
+    var value = parseFloat(inputFields[i].value);
+    if (!isNaN(value)) {
+      sum += value;
+      values.push(value);
+    }
+  }
 
-function Przelicz() {
-    let d1, d2, d3, d4;
-    d1 = parseInt(document.getElementById("text1").value)
-    d2 = parseInt(document.getElementById("text2").value)
-    d3 = parseInt(document.getElementById("text3").value)
-    d4 = parseInt(document.getElementById("text4").value)
+  var average = sum / values.length;
+  var min = Math.min(...values);
+  var max = Math.max(...values);
 
-    let suma = d1 + d2 + d3 + d4;
-    let avg = suma / 4;
-    let min = Math.min(d1, d2, d3, d4);
-    let max = Math.max(d1, d2, d3, d4);
+  document.getElementById("suma").innerHTML = sum;
+  document.getElementById("srednia").innerHTML = isNaN(average) ? 0 : average;
+  document.getElementById("min").innerHTML = min;
+  document.getElementById("max").innerHTML = max;
+};
 
-    document.getElementById("suma").innerHTML = suma;
-    document.getElementById("srednia").innerHTML = avg;
-    document.getElementById("min").innerHTML = min;
-    document.getElementById("max").innerHTML = max;
-    
-}
+const addInput = () => {
+  var inputsContainer = document.getElementById("inputs-container");
+  var inputRow = document.createElement("div");
+  inputRow.classList.add("count-row");
+  inputRow.innerHTML = `
+        <input type="text" class="input-number" onkeyup="countInputs()">
+        <button onclick="removeInput(this)">Delete</button>
+    `;
+  inputsContainer.appendChild(inputRow);
+};
 
-//  let handler = document.querySelectorAll(input)
-
-let dok = document.querySelector(".suma");
-dok.addEventListener("click", ()=> { console.log("cos")});
-
-// handler.addEventListener("onchange", Przelicz)
+const removeInput = (button) => {
+  var inputRow = button.parentElement;
+  inputRow.remove();
+  countInputs();
+};
