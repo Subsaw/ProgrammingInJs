@@ -1,0 +1,6 @@
+img.active {
+    display: block; 
+}
+img {
+    display: none;
+}
