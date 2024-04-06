@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drumkit</title>
+</head>
+
+<body>
+    <audio src="./sounds/clap.wav" controls data-key="a" id="s1"></audio>
+    <audio src="./sounds/kick.wav" controls data-key="s" id="s2"></audio>
+    <audio src="./sounds/hihat.wav" controls data-key="d" id="s3"></audio>
+
+    <div>
+        <button onclick="startRecording(0)">Start Recording Channel 1</button>
+        <button onclick="stopRecording(0)">Stop Recording Channel 1</button>
+        <button onclick="playRecording(0)">Play Channel 1</button>
+    </div>
+    <div>
+        <button onclick="startRecording(1)">Start Recording Channel 2</button>
+        <button onclick="stopRecording(1)">Stop Recording Channel 2</button>
+        <button onclick="playRecording(1)">Play Channel 2</button>
+    </div>
+    <div>
+        <button onclick="startRecording(2)">Start Recording Channel 3</button>
+        <button onclick="stopRecording(2)">Stop Recording Channel 3</button>
+        <button onclick="playRecording(2)">Play Channel 3</button>
+    </div>
+    <div>
+        <button onclick="startRecording(3)">Start Recording Channel 4</button>
+        <button onclick="stopRecording(3)">Stop Recording Channel 4</button>
+        <button onclick="playRecording(3)">Play Channel 4</button>
+    </div>
+    <div>
+        <button onclick="playAll()">Play All Channels</button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
