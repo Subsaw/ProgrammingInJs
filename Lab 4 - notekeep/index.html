@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notatki</title>
+    <style>
+        .note {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        .pinned {
+            border: 2px solid gold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Notatki</h1>
+    <div>
+        <input type="text" id="title" placeholder="Tytuł" />
+        <textarea id="content" placeholder="Treść"></textarea>
+        <input type="color" id="color" value="#ffffff" />
+        <label>
+            <input type="checkbox" id="pin" /> Przypnij
+        </label>
+        <button onclick="saveNote()">Zapisz notatkę</button>
+    </div>
+    <div id="notesContainer"></div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
