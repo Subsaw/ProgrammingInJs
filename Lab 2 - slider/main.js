@@ -3,7 +3,6 @@ let nextSlide = document.querySelector(".right-slide");
 let prevSlide = document.querySelector(".left-slide");
 let totalSlides = slides.length;
 let index = 0;
-console.log(slides);
 
 nextSlide.onclick = function () {
   next("next");
@@ -39,6 +38,14 @@ const show = (number) => {
   }
   slides[index].classList.add("active");
 };
+
+const autoSlide = () => {
+  setInterval(() => {
+    next("next");
+  }, 5000);
+};
+
+autoSlide();
 
 // const box = document.querySelector('.box')
 
